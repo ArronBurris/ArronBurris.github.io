@@ -9,6 +9,7 @@ if numberOfSongs >= 10:
 else:
     totalPrice = totalPrice + 0
 if numberOfSongs >= 10:
+    print ("Total price: $" + str (totalPrice))
     print ("YOU GOT A $1 DISCOUNT FOR BUYING 10 OR MORE SONGS!!")
     print ("Congratulation! Now have a Parrot")
     print ("                                .---.")
