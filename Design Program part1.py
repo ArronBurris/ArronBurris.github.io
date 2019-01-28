@@ -1,6 +1,6 @@
 Problem:Calculate cost of video games for christmas presents
 Requirements:
-    Cost of video games
+    Declare:Cost of video games
     Input:Number of relatives that want videos games
     Input:Number of video games per relative
     Output:Total number of video games
