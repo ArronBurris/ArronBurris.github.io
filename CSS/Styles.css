@@ -1,2 +1,10 @@
-body
-{background-color#FF1493;}
+body, html, p
+{
+	background-color: #C0C0C0;
+	color: #00f00;
+}
+dl
+{
+	color: #00f00;
+	font-size:2em;
+}
