@@ -5,12 +5,16 @@ Date: 2/13/19
 Assignment: Project 1 (Diet Water)
 */
 html 
-{background-color:#B22222}
+{background-color: #32CD32;}
 body
-{color: }
+{color: white; }
 
-main {padding: 0px 15px 0px 15px}
+#main {padding: 0px 15px 0px 15px;}
 
-contact {padding: 0px auto 0px auto}
-	{width: 60%}
-	
+#contact {padding-top: 0px;
+		padding-bottom: 0px;
+	    width: 60%}
+a:visited {color: #228B22;}
+
+a:hover {background-color: blue;
+color: #B22222;}
