@@ -1,0 +1,20 @@
+@charset "UTF-8";
+/* 
+Name: Arron Burris
+Date: 2/13/19
+Assignment: Project 1 (Diet Water)
+*/
+html 
+{background-color: #32CD32;}
+body
+{color: white; }
+
+#main {padding: 0px 15px 0px 15px;}
+
+#contact {padding-top: 0px;
+		padding-bottom: 0px;
+	    width: 60%}
+a:visited {color: #228B22;}
+
+a:hover {background-color: blue;
+color: #B22222;}
