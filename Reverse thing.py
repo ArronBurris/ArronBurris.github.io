@@ -1,9 +1,8 @@
 UserMessage = 0
 
-print("Ey yo give say something short, like 20 character long kinda short.")
-print("You do that and i'll reverse it for your... nothing dirty though.")
+print("Ey yo I bet I can say anything in reverse, just gimme something to say and i'll say it back in reverse.")
 
-input(str(UserMessage))
+UserMessage = input("So what should I say?: ")
 
 UserMessage = UserMessage[::-1]
 
