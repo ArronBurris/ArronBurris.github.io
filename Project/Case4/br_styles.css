@@ -13,19 +13,70 @@
 
 */
 
-body {
-	font-size: 20px;
-}
 
+body 
+	{
+		font-size: 20px;
+	}
 
+p 
+	{
+		font-size:25px;
+	}
 
-
-
-
-
-h1
+#heads
+	{
+		Display: grid;
+		grid-template-columns: 20% 20% 20% 20% 20%;
+		
+	}
+	
+#heads h1
 {
-	float: middle;
-	width: 100px;
+	grid-column-start:1;
+	grid-column-end:6;
 }
+
+#heads h1, #heads p
+	{
+		border: 1px solid black;
+	}
+	
+#whole
+	{
+		display: grid;
+		border: 1px solid black;
+		
+	}
+
+#sexshun 
+	{
+		display: grid;
+		
+	}
+
+
+#sexshun div
+	{
+		border: 1px solid black;
+
+	}
+
+#sexshun 
+	{
+		grid-template-columns: 25% 25% 25% 25%;
+		
+		grid-template-rows:33% 33% 33%;
+	}
+	
+#longwords
+	{
+		grid-row-start: 1;
+		grid-row-end: 4;
+		font-size-adjust: 20px;
+		text-indent: 20px;
+		padding-top:20px;
+	}
+
+
 
