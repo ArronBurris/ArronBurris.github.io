@@ -1,0 +1,24 @@
+table,tr,th,td
+{
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+
+
+th
+{
+	background-color: grey;
+}
+
+tr:nth-child(even)
+{
+	background-color: yellow;
+	
+}
+
+tr:nth-child(odd)
+{
+	background-color: blue;
+}
+
+/* the grey rows are counted in the nth-child background colors */
