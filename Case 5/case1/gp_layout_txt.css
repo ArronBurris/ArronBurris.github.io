@@ -1,0 +1,73 @@
+@charset "utf-8";
+
+/*
+   New Perspectives on HTML5 and CSS3, 7th Edition
+   Tutorial 5
+   Case Problem 1
+   
+   Author:  Arron Burris 
+   Date:  3/27/19   
+   
+   Filename: gp_layout.css
+
+   This file contains the layout styles and media
+   queries used with sample pages from the Golden
+   Pulps website.
+
+*/
+
+
+/* Import Basic Design Styles Used on All Screens */
+
+@import url("gp_designs.css");
+
+/* Flex Layout Styles */
+
+body
+{
+	display: flex;
+}
+
+#sheet
+{
+	flex-grow: 3;
+	flex-shrink: 1;
+	flex-basis: 301px;
+}
+
+article
+{
+	flex-grow: 1;
+	flex-shrink: 3;
+	flex-basis: 180px;
+}
+
+
+/* ============================================
+	Mobile Devices: 0 - 480 pixels
+   ============================================
+*/
+
+@media only screen and (max-width: 480px)
+{
+	
+.horizontal
+{
+	flex-order: 
+}
+	
+	
+.panel
+{
+	width: 100%;
+}
+	
+	
+}
+
+
+/* ===================================================
+	Tablet and Desktop Devices: Greater than 480 pixels
+   ===================================================
+*/
+
