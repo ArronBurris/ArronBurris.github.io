@@ -62,10 +62,10 @@ def ask_yes_no(question):
 
 
 
-def ask_number(question, low, high):
-    """ Ask for a number within a range."""
-    response = None
-    while response not in range(low, high):
+def ask_number(question, low, high, step = 1): #setting "step" default value here means 
+    """Ask for a number within a range."""     #it won't spit out an error if you 
+    response = None                             #don't include the "step" in the call
+    while response not in range(low, high, step):
         response = int(input(question))
     return response 
 
@@ -136,7 +136,7 @@ def human_move(board, human):
     legal = legal_moves(board)
     move = None
     while move not in legal:
-        move = ask_number("Where will you move? (0 - 8): ", 0, NUM_SQUARES)
+        move = ask_number("Where will you move? (0 - 8): ", 0, NUM_SQUARES, 3)
         if move not in legal:
             print ("\nThat square is already occupied, foolish human. Choose another.\n")
             print ("Fine..")
@@ -157,7 +157,7 @@ def computer_move(board, computer, human):
 
     #if computer can win, take that move
     for move in legal_moves(board):
-        board[move] = comupter
+        board[move] = computer
         if winner(board) == computer:
             print(move)
             return move
@@ -167,8 +167,7 @@ def computer_move(board, computer, human):
     for move in BEST_MOVES:
         if move in legal_moves(board):
             print(move)
-            return move
-        
+            return move 
 
 def next_turn(turn):
     """ Switch turns."""
