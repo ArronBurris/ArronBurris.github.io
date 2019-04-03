@@ -1,0 +1,15 @@
+.Shided
+{
+	display: none;
+}
+
+table, tr, th, td
+{
+	border: 1px solid black;
+}
+
+tr, th, td
+{
+	height: 50px;
+	width: 200px;
+}
