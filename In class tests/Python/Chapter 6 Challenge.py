@@ -62,10 +62,10 @@ def ask_yes_no(question):
 
 
 
-def ask_number(question, low, high):
-    """ Ask for a number within a range."""
-    response = None
-    while response not in range(low, high):
+def ask_number(question, low, high, step = 1):  
+    """Ask for a number within a range."""     
+    response = None                             
+    while response not in range(low, high, step):
         response = int(input(question))
     return response 
 
@@ -147,6 +147,54 @@ def human_move(board, human):
 
 
 def computer_move(board, computer, human):
+    """Make computer move."""
+    #make a copy to work with since function will be changing list
+    board = board[:]
+    #the best positions to have, in order
+    BEST_MOVES = ( 4, 2, 6, 8, 0, 1, 3, 5, 7)
+
+    WAYS_TO_WIN = ((0, 1, 2),
+                   (3, 4, 5),
+                   (6, 7, 8),
+                   (0, 3, 6),
+                   (1, 4, 7),
+                   (2, 5, 8),
+                   (0, 4, 8),
+                   (2, 4, 6))
+
+    ALT_BEST_MOVES = (1, 3, 5 ,6)
+
+    print("I shall take square number", end=" ")
+
+    #if computer can win, take that move
+    for move in legal_moves(board):
+        board[move] = computer
+        if winner(board) == computer:
+            print(move)
+            return move
+        #done checking this move, undo it
+        board[move] =  EMPTY
+    # since no one can win on next move, pick best open square
+    for move in BEST_MOVES:
+        if move in legal_moves(board):
+            for row in WAYS_TO_WIN:
+                if move in row:    
+                    if board[row[0]] == board[row[1]] != EMPTY:                  
+                        print(move)
+                        return move
+                    if board[row[1]] == board[row[2]] != EMPTY:                   
+                        print(move)
+                        return move
+                    if board[row[2]] == board[row[0]] != EMPTY:                 
+                        print(move)
+                        return move
+    
+    for move in BEST_MOVES:
+        if move in legal_moves(board):
+            print(move)
+            return move
+
+def computer_moe(board, computer, human):
     """Make computer move."""
     #make a copy to work with since function will be changing list
     board = board[:]
