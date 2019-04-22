@@ -15,20 +15,19 @@
 
 def create_players(numberOfPlayers = 2):
     players = []
-    for player in range (numberOfPlayers):
-        players.append("Player" + str(player))
+    for person in range (numberOfPlayers):
+        players.append("Player" + str(person))
     return players
 
 def build_deck():
     deck = {}
     suites = ["Hearts","Clubs","Diamonds","Spades"]
     for suite in suites:
-        numbers = []
         for number in range(13):
-            numbers.append(number+1)
-            deck[suite] = numbers
+            deck[suite + str(number + 1)] = number + 1
     return deck
 
+def deal(deck,players):
 
 players = create_players()
 print(players)
