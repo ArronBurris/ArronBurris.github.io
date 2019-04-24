@@ -11,7 +11,25 @@
 html {font-family: 'Ranga', cursive;
    font-size: 14px;
    height:100%;
+   width:75%;
+   margin-right: auto;
+   margin-left: auto;
+   border-radius: 25px 25px 25px 25px;
+   
 }
+
+form
+{
+	font-size: 20px;
+}
+
+#Page
+{
+	background-color: grey;
+	border-radius: 25px 25px 25px 25px;
+	border: 1px solid black;
+}
+
 article, aside, body, div, footer, header, h1, h2, h3, nav, p {
    border: 0;
    padding: 0;
@@ -20,8 +38,44 @@ article, aside, body, div, footer, header, h1, h2, h3, nav, p {
  
 }
 
+@media only screen and (max-width: 1900px){
+.name{
+	page-break-before: break-before;
+}
+}
+
+.name{
+	
+}
+
+@media print{
+body{
+	background-color: white;
+	color: black;
+}
+.image, .NavMenu{
+	display: none;
+}
+h1{
+	justify-self: center;
+}
+}
+
+@media only screen and (max-width: 584px){
+th, tr, td{
+	font-size: 20px;
+}
+	
+}
 /* body and page container */
 
+footer
+{
+	text-align: center;
+	background-color: black;
+	color: white;
+	border-radius: 0px 0px 50px 50px;
+}
 
 body {
    font-family: Arial, Helvetica, sans-serif;
@@ -29,7 +83,18 @@ body {
    
 }
 
+article
+{
+	height: 700px;
+	margin-bottom: auto;
+	margin-top: auto;
+}
 
+table, form
+{
+	height: 500px;
+
+}
 
 p {
    font-size: 1.2em;
@@ -39,7 +104,10 @@ p {
 
 h1
 {
-		justify-self: center;
+	justify-self: center;
+	margin-left: auto;
+	margin-right: auto;
+	width: 200px;
 }
 
 .NavMenu
@@ -67,11 +135,12 @@ h1
 {
 	display: grid;
 	grid-template-columns: auto auto auto;
+
 }
 
 .SkipLink
 {
-	font-size: 20px;
+	font-size: 10px;
 	justify-self: center;
 	margin-top: 20px;
 	opacity: 0;
@@ -91,6 +160,7 @@ h1
 .image
 {
 	height: 50px;
+	justify-self: left;
 }
 
 .video-responsive{
