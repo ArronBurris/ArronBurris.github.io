@@ -38,14 +38,16 @@ article, aside, body, div, footer, header, h1, h2, h3, nav, p {
  
 }
 
-@media only screen and (max-width: 1900px){
-.name{
-	page-break-before: break-before;
+.brown{
+	background-color: #ab6a59;
 }
+
+.red{
+	background-color: #ad3a49;
 }
 
 .name{
-	
+	width: 475px;
 }
 
 @media print{
@@ -61,7 +63,7 @@ h1{
 }
 }
 
-@media only screen and (max-width: 584px){
+@media only screen and (max-width: 870px){
 th, tr, td{
 	font-size: 20px;
 }
@@ -88,6 +90,7 @@ article
 	height: 700px;
 	margin-bottom: auto;
 	margin-top: auto;
+	background-color: #bf7c53;
 }
 
 table, form
