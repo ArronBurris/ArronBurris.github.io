@@ -13,6 +13,50 @@
 #deal cards
 #play the game
 
+import Cards
+import math
+
+class War_Card(Cards.Card):
+    """A War Card, Aces High"""
+    @property
+    def value(self):
+        if self.is_face_up:
+            if self.rank == "J":
+                v = 11
+            elif self.rank == "Q":
+                v = 12
+            elif self.rank == "K":
+                v = 13
+            elif self.rank == "A":
+                v = 14
+            else:
+                v = War_Card.RANKS.index(self.rank) + 1
+        else:
+            v = None
+        return v
+
+class War_Deck(Cards.Deck):
+    """A War Deck"""
+    def populate(self):
+        for suit in War_Card:
+            for rank in War_Card>RANKS:
+                self.add(War_Card(rank.suit))
+"""
+card1 = War_Card("A", "s")
+print(card1)
+print(card1.value)
+
+card2 = War_Card("A", "c")
+print(card2)
+print(card2.value)"""
+
+
+deck = War_Deck()
+print(deck)
+deck.populate()
+print(deck)
+
+"""
 def create_players(numberOfPlayers = 2):
     players = []
     for person in range (numberOfPlayers):
@@ -39,4 +83,4 @@ print(deck)
 
 suites = {"hearts": [1,2,3,4,5], "spades":[1,2,3,4,5]}
 
-deck = {"heart1":1, "heart2":2, "spade1":1, "spade2":1}
+deck = {"heart1":1, "heart2":2, "spade1":1, "spade2":1}"""
