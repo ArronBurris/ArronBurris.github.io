@@ -12,127 +12,70 @@
 # If no then ask what they would like to change and re ask the question until satisfied.
 # End program
 
-
-import tkinter as tk
-
 import sys
 
-box = tk.Tk()
-box.title("Final Project")
-box.geometry("500x500")
-box.resizable(0,0)
+BuyingCar = False
 
-welcomelabel = tk.Label(box, text="Welcome to this shitty GUI")
-welcomelabel.pack()
+Opening_Q = 0
 
-Buying_A_Car = False
+CarType = None
+
 TypePrice = 0
 
+CarColor = None
+
+ColorPrice = 0
+
+TotalPrice = 0
 
 
-        
-      
-    
-    
+def First_Q():
+    print("hey")
 
-def Car_Type_Page():
-    
-    def Jeep_Choice():
-        CarType = "Jeep"
-        TypePrice = 10
-        print("You chose a Jeep! The Jeep option will be $10.")
-        return CarType
-        return TypePrice
-        
 
-    def Suv_Choice():
-        CarType = "Suv"
-        TypePrice = 15
-        print("You chose an Suv! The Suv option will be $15.")
-        return CarType
-        return TypePrice
 
-    def Truck_Choice():
-        CarType = "Truck"
-        TypePrice = 5
-        print("You chose a Truck! The Truck option will be $5.")
-        return CarType
-        return TypePrice
-    
-    def Black_C_Choice():
-        CarColor = "Black"
-        ColorPrice = 2
-        print("You have selected a black " + CarType + ". This color is $2.")    
-
-    def White_C_Choice():
-        CarColor = "White"
-        ColorPrice = 2
-        print("You have selected a black " + str(CarType) + ". This color is $1.")
-
-    def Red_C_Choice():
-        CarColor = "Red"
-        ColorPrice = 2
-        print("You have selected a red " + str(CarType) + ". This color is $4.")
-
-    def Blue_C_Choice():
-        CarColor = "Blue"
-        ColorPrice = 2
-        print("You have selected a blue " + str(CarType) + ". This color is $4.")
-
-    def Green_C_Choice():
-        CarColor = "Green"
-        ColorPrice = 2
-        print("You have selected a green " + str(CarType) + ". This color is $20.")
-        
-
-    # CarType Button Defs
-    JeepButton = tk.Button(box, text="Jeep", width=25, command=Jeep_Choice)
-    SuvButton = tk.Button(box, text="Suv", width=25, command=Suv_Choice)
-    TruckButton = tk.Button(box, text="Truck",width=25, command=Truck_Choice)
-    # CarColor Button Defs
-    BlackColor = tk.Button(box, text="Black", width=20, command=Black_C_Choice)
-    WhiteColor = tk.Button(box, text="White", width=20, command=White_C_Choice)
-    RedColor = tk.Button(box, text="Red", width=20, command=Red_C_Choice)
-    BlueColor = tk.Button(box, text="Blue", width=20, command=Blue_C_Choice)
-    GreenColor = tk.Button(box, text="Blue", width=20, command=Green_C_Choice)
-
-    
-    JeepButton.pack()
-    SuvButton.pack()
-    TruckButton.pack()
-    BlackColor.pack()
-    WhiteColor.pack()
-    RedColor.pack()
-    BlueColor.pack()
-    GreenColor.pack()
-    
-    
-   
-    
-        
-
-def main():
-    Car_Type_Page()
-    
+def Main():
+    First_Q()
     
 
 
-while Buying_A_Car == False:
-    Question = str(input("Would you like to purchase a car? y/n")).lower()
-    if (Question == "yes" or Question == "y"):
-        Buying_A_Car = True
-        
-        main()
-    elif (Question == "no" or Question == "n"):
-        JustChecking = str(input("Are you sure? y/n")).lower()
-        if (JustChecking == "yes" or JustChecking == "y"):
+while BuyingCar == False:
+    Opening_Q = input("Hello! Would you like to buy a car?").lower()
+    if (Opening_Q == "yes" or Opening_Q == "y"):
+        BuyingCar = True
+        Main()
+    elif (Opening_Q == "no" or Opening_Q == "n"):
+        Check = input("Are you sure?").lower()
+        if (Check == "yes" or Check == "y"):
+            print("Ok then leave ya cuck")
             sys.exit()
-        elif (JustChecking == "no" or JustChecking == "n"):
-            Buying_A_Car = True
-            main()
-    else:
-        print("Invalid response. Please answer yes or no")
-            
+        elif (Check =="no" or Check == "n"):
+            print("Stop wasting my time and buy a fuckin car")
+            BuyingCar = True
+            Main()
+        else:
+            print("Invalid response. Please answer with 'Yes' or 'No'")
+                
+                
+                
+Main()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
 
         
 
