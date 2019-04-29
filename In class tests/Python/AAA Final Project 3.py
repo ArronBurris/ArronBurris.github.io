@@ -12,6 +12,7 @@
 # If no then ask what they would like to change and re ask the question until satisfied.
 # End program
 
+
 import tkinter as tk
 
 box = tk.Tk()
@@ -22,42 +23,9 @@ box.resizable(0,0)
 welcomelabel = tk.Label(box, text="Welcome to this shitty GUI")
 welcomelabel.pack()
 
+class GUI:
 
-
-
-def Jeep_Choice():
-    Cartype = "Jeep"
-    JeepChoiceLabel = tk.Label(box, text="You chose a Jeep!")
-    JeepChoiceLabel.pack(padx=5, pady=10, side=tk.LEFT)
-
-def Suv_Choice():
-    Cartype = "SUV"
-    SubChoiceLabel = tk.Label(box, text="You chose an SUV!")
-    print("You chose an SUV!")
-
-OptionSuv = tk.Button(box, text='SUV', width=25, command=Suv_Choice)
-
-OptionJeep = tk.Button(box, text='Jeep', width=25, command=Jeep_Choice)
-
-def Hey():
-    Cartype = False
-    Cartypelabel = tk.Label(box, text="Which type of car would you like?")
-    Cartypelabel.pack()
-    OptionJeep.pack()
-    OptionSuv.pack()
+    def __init__(self):
         
-    
-
-def Main():
-    #Put while loop here
-    Cartype = False
-    question = input("Do you want to buy a car?")
-    if question == "Yes":
-        Hey()
-        
-
-Main()
-
-
 
 
