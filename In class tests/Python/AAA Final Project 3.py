@@ -172,10 +172,13 @@ def Calculate_Total(TypePrice, ColorPrice, TotalPrice):
 
 
 def Main(CarType, TypePrice, Color, ColorPrice, TotalPrice):
-    CarType_Question()
-    Color_Question()
+    CarType, TypePrice = CarType_Question()
+    Color, ColorPrice = Color_Question()
     Calculate_Total(TypePrice, ColorPrice, TotalPrice)
-    print(CarType_Question(TypePrice))
+    
+    print(CarType, TypePrice)
+    print(Color, ColorPrice)
+    
     
     
     
@@ -188,7 +191,7 @@ while BuyingCar == False:
     Opening_Q = input("Hello! Would you like to buy a car?").lower()
     if (Opening_Q == "yes" or Opening_Q == "y"):
         BuyingCar = True
-        Main(CarType, TypePrice, Color, ColorPrice,TotalPrice)
+        Main(CarType, TypePrice, Color, ColorPrice, TotalPrice)
     elif (Opening_Q == "no" or Opening_Q == "n"):
         Check = input("Are you sure?").lower()
         if (Check == "yes" or Check == "y"):
