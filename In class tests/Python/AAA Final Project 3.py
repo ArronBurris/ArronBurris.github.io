@@ -27,15 +27,19 @@ Color = None
 
 TotalPrice = 0
 
+BuyingAgain = True
+
 
 
 
 
 def CarType_Question():
     
+    file = open("CarTypes.txt", "r")
+    Lines = file.readlines()
     Satisfied_Type = False
     while Satisfied_Type == False:
-        CarType = input("""
+        CarChoice = input("""
         You can choose between 3 different car types!
         -Jeep--$10
         -Suv--$15
@@ -43,7 +47,8 @@ def CarType_Question():
 
         Those are your choices now pick one ya stoopid.
         Which one do you want:""").lower()
-        if (CarType == "jeep"):
+        if (CarChoice == "jeep"):
+            CarType = Lines[0]
             TypePrice = 10
             Satis = input("""
             You chose a Jeep!
@@ -57,7 +62,8 @@ def CarType_Question():
                 print("Invalid response. Please answer 'Yes' or 'No'")
             
     
-        elif(CarType == "suv"):
+        elif(CarChoice == "suv"):
+            CarType = Lines[1]
             TypePrice = 15
             Satis = input("""
             You chose as SUV!
@@ -70,7 +76,8 @@ def CarType_Question():
             else:
                 print("Invalid response. Please answer 'Yes' or 'No'")
             
-        elif (CarType == "truck"):
+        elif (CarChoice == "truck"):
+            CarType = Lines[2]
             TypePrice = 5
             Satis = input("""
             You chose a Truck!
@@ -92,7 +99,7 @@ def CarType_Question():
 def Color_Question():
     
     Satisfied_Color = False
-    colors = ["red", "blue", "white", "black"]
+    colors = ["Red", "Blue", "White", "Black"]
     while Satisfied_Color == False:
         Color = input("""
         Now that you've chosen the type of car you want,
@@ -105,7 +112,8 @@ def Color_Question():
         -Black--$3
         Those are your choices now pick one ya stoopid
         Which one do you want:""").lower()
-        if (Color == colors[0]):
+        if (Color == "red"):
+            Color = colors[0]
             Check = input("""
             You chose red as your color!
             Are you satisfied with this choice?:""").lower()
@@ -118,39 +126,42 @@ def Color_Question():
             else:
                 print("Invalid response. Please answer 'Yes' or 'No'")
                 
-        elif (Color == colors[1]):
+        elif (Color == "blue"):
+            Color = colors[1]
             Check = input("""
             You chose blue as your color!
             Are you satisfied with this choice?:""").lower()
             if (Check == "yes" or Check == "y"):
                 ColorPrice = 5
-                print("Gucci")
+                print("Gucci!")
                 Satisfied_Color = True
             elif (Check == "no" or Check == "n"):
                 print("Well then pick one you like!")
             else:
                 print("Invalid response. Please answer 'Yes' or 'No'")
                 
-        elif (Color == colors[2]):
+        elif (Color == "white"):
+            colors[2]
             Check = input("""
             You chose white as your color!
             Are you satisfied with this choice?:""").lower()
             if (Check == "yes" or Check == "y"):
                 ColorPrice = 2
-                print("Gucci")
+                print("Gucci!")
                 Satisfied_Color = True
             elif (Check == "no" or Check == "n"):
                 print("Well then pick one you like!")
             else:
                 print("Invalid response. Please answer 'Yes' or 'No'")
                 
-        elif (Color == colors[3]):
+        elif (Color == "black"):
+            Color = colors[3]
             Check = input("""
             You chose black as your color!
             Are you satisfied with this choice?:""").lower()
             if (Check == "yes" or Check == "y"):
                 ColorPrice = 3
-                print("Gucci")
+                print("Gucci!")
                 Satisfied_Color = True
             elif (Check == "no" or Check == "n"):
                 print("Well then pick one you like!")
@@ -174,10 +185,16 @@ def Calculate_Total(TypePrice, ColorPrice, TotalPrice):
 def Main(CarType, TypePrice, Color, ColorPrice, TotalPrice):
     CarType, TypePrice = CarType_Question()
     Color, ColorPrice = Color_Question()
-    Calculate_Total(TypePrice, ColorPrice, TotalPrice)
+    TotalPrice = Calculate_Total(TypePrice, ColorPrice, TotalPrice)
+    print("""
+    You have selected a """ + Color + """ """ + CarType + """
+    Have fun with your new """ + str(TotalPrice) + """ dollar car.
+    I think you'll find that it's worth what you'll pay.""")
+    
     
     print(CarType, TypePrice)
     print(Color, ColorPrice)
+    print(TotalPrice)
     
     
     
@@ -188,21 +205,26 @@ def Main(CarType, TypePrice, Color, ColorPrice, TotalPrice):
 
 
 while BuyingCar == False:
-    Opening_Q = input("Hello! Would you like to buy a car?").lower()
-    if (Opening_Q == "yes" or Opening_Q == "y"):
-        BuyingCar = True
-        Main(CarType, TypePrice, Color, ColorPrice, TotalPrice)
-    elif (Opening_Q == "no" or Opening_Q == "n"):
-        Check = input("Are you sure?").lower()
-        if (Check == "yes" or Check == "y"):
-            print("Ok then leave ya cuck")
-            sys.exit()
-        elif (Check =="no" or Check == "n"):
-            print("Stop wasting my time and buy a fuckin car")
-            BuyingCar = True
+     while BuyingAgain == True:
+        Opening_Q = input("Hello! Would you like to buy a car?:").lower() 
+        if (Opening_Q == "yes" or Opening_Q == "y"):
             Main(CarType, TypePrice, Color, ColorPrice, TotalPrice)
-        else:
-            print("Invalid response. Please answer with 'Yes' or 'No'")
+            BuyAgain = input("Would you like to buy another car? y/n:")
+            if (BuyAgain == "yes" or BuyAgain =="y"):
+                print("Buying another car.")
+            elif (BuyAgain == "no" or BuyAgain == "n"):
+                print("Alright then, see ya dummy LOL")
+                sys.exit()
+        elif (Opening_Q == "no" or Opening_Q == "n"):
+            Check = input("Are you sure?").lower()
+            if (Check == "yes" or Check == "y"):
+                print("Ok then leave ya cuck")
+                sys.exit()
+            elif (Check =="no" or Check == "n"):
+                print("Stop wasting my time and buy a fuckin car")
+                BuyingCar = True
+            else:
+                print("Invalid response. Please answer with 'Yes' or 'No'")
                 
                 
                 
