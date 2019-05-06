@@ -17,13 +17,16 @@ class Rooms(object):
         return Grid
 
     def Display_Grid(Grid):
-        print("-------------")
-        print("|" + Grid[0] + "|" + Grid[1] + "|" + Grid[2] + "|")
-        print("-------------")
-        print("|" + Grid[3] + "|" + Grid[4] + "|" + Grid[5] + "|")
-        print("-------------")
-        print("|" + Grid[6] + "|" + Grid[7] + "|" + Grid[8] + "|")
-        print("-------------")
+        print("   A   B   C  ")
+        print(" -------------")
+        print("1" + "|" + Grid[0] + "|" + Grid[1] + "|" + Grid[2] + "|")
+        print(" -------------")
+        print("2" + "|" + Grid[3] + "|" + Grid[4] + "|" + Grid[5] + "|")
+        print(" -------------")
+        print("3" + "|" + Grid[6] + "|" + Grid[7] + "|" + Grid[8] + "|")
+        print(" -------------")
+
+class Movement():
     
         
    
