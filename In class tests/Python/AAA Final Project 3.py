@@ -18,11 +18,12 @@ BuyingCar = False
 
 Opening_Q = 0
 
-
 TypePrice = 0
+
 CarType = None
 
 ColorPrice = 0
+
 Color = None
 
 TotalPrice = 0
